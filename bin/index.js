@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import { program } from 'commander';
-import fs from 'fs';
-import path from 'path';
-import { execSync } from 'child_process';
+const { program } = require('commander');
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 
 function createProject(projectName) {
   const projectPath = path.join(process.cwd(), projectName);
@@ -112,7 +112,7 @@ app.listen(port, () => {
     ...packageJson.scripts,
     "build": "tsc",
     "start": "npm run build && node dist/index.js",
-   "dev": "nodemon --watch src/**/*.ts --exec \"npx ts-node src/index.ts\""
+    "dev": "nodemon --watch src/**/*.ts --exec \"npx ts-node src/index.ts\""
   };
   fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
