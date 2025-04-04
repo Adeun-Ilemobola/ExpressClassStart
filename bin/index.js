@@ -44,7 +44,8 @@ function createProject(projectName) {
     "cors": "*",
     "morgan": "*",
     "dotenv": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "ejs":"*"
   };
 
   packageJson.devDependencies = {
@@ -53,6 +54,7 @@ function createProject(projectName) {
     "@types/express": "*",
     "@types/cors": "*",
     "@types/morgan": "*",
+    "@types/ejs":"*",
     "nodemon": "*",
     "ts-node": "*"
   };
@@ -92,6 +94,7 @@ function createProject(projectName) {
   const indexTsContent = `import express, { Request, Response } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
+import mongoose from 'mongoose';
 
 const app = express();
 const port = 3000;
